@@ -1,18 +1,13 @@
 defmodule Mapreduce do
   @moduledoc """
-  Documentation for Mapreduce.
   """
 
-  @doc """
-  Hello world.
+  require Logger
 
-  ## Examples
-
-      iex> Mapreduce.hello
-      :world
-
-  """
-  def hello do
-    :world
+  def main(_argv) do
+    numbers = Enum.shuffle(1..12345678)
+    Logger.info "Started"
+    IO.puts inspect Mergesort.sort(numbers)
+    Logger.info "Finished"
   end
 end
